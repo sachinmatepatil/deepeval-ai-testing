@@ -2,9 +2,11 @@ from openai import OpenAI
 from difflib import unified_diff
 import os
 
-# Set your OpenAI API key
-api_key = os.getenv("OPENAI_API_KEY", "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")
+from dotenv import load_dotenv
+load_dotenv()
+api_key = os.getenv("OPENAI_API_KEY")
 client = OpenAI(api_key=api_key)
+
 
 # Define the prompt
 prompt = "Explain what API testing is in one short paragraph."
