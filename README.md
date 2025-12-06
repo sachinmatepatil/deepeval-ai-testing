@@ -69,3 +69,40 @@ Explain what API testing is in one short paragraph.
 
 ---
 
+🧠 Day 3 — Built-in + Custom LLM Metrics (DeepEval)
+
+🗂️ File: day3_llm_eval.py
+🎯 Goal: Evaluate LLM output using:
+
+✅ AnswerRelevanceMetric (checks if the answer is relevant)
+
+✅ ContextPrecisionMetric (checks if answer is grounded in context)
+
+🛠️ FactualAccuracyMetric (custom rule-based metric)
+
+🔍 Prompt Tested
+Input:        "What is the capital of France?"
+Expected:     "Paris is the capital of France."
+Actual:       "The capital of France is Paris."
+Context:      ["France is a country in Europe. Paris is its capital."]
+
+📊 Output Sample (Console)
+Metric: Answer Relevance | Score: ✅ 1.0 | Status: PASSED
+Metric: Context Precision | Score: ✅ 1.0 | Status: PASSED
+Metric: Factual Accuracy (custom) | Score: ✅ 1.0 | Status: PASSED
+
+🧪 Custom Metric Logic
+
+Simple rule: If "paris" is present in the actual answer → score = 1.0
+
+This simulates a factual validation check (can be extended with NLP logic or regex)
+
+💡 What I Learned
+
+How to run multiple evaluation metrics together
+
+How to create my own BaseMetric subclass in DeepEval
+
+Hands-on practice of LLM output validation techniques used in real-world GenAI products
+
+----------------------------------------------------
